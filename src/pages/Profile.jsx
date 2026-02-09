@@ -11,7 +11,7 @@ const Profile = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
-      <div className="max-w-4xl mx-auto px-6 py-10 flex-1 w-full">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex-1 w-full">
         {/* Header */}
         <div className="mb-8">
           <Link 
@@ -23,25 +23,25 @@ const Profile = () => {
             </svg>
             Back to Dashboard
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">My Profile</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">My Profile</h1>
           <p className="text-gray-600 mt-1">Manage your account information and settings</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Profile Card */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
               {/* Avatar */}
               <div className="mb-4">
-                <div className="w-24 h-24 mx-auto bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                  <span className="text-white text-3xl sm:text-4xl font-bold">
                     {user.name.charAt(0).toUpperCase()}
                   </span>
                 </div>
               </div>
               
               {/* Name and Email */}
-              <h2 className="text-xl font-bold text-gray-900 mb-1">{user.name}</h2>
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">{user.name}</h2>
               <p className="text-sm text-gray-600 mb-4">{user.email}</p>
               
               {/* Status Badge */}
@@ -60,8 +60,8 @@ const Profile = () => {
 
           {/* Information Card */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Account Information</h3>
+            <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6">Account Information</h3>
               
               <div className="space-y-6">
                 <ProfileItem 

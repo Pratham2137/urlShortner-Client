@@ -39,7 +39,7 @@ const CreateUrlForm = ({ onSuccess }) => {
           Original URL
         </label>
         <input
-          className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="border border-gray-300 rounded-lg p-2.5 sm:p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
           placeholder="https://example.com/very/long/url"
           {...register("originalURL", { required: true })}
         />
@@ -50,7 +50,7 @@ const CreateUrlForm = ({ onSuccess }) => {
           Custom short code (optional)
         </label>
         <input
-          className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="border border-gray-300 rounded-lg p-2.5 sm:p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
           placeholder="my-custom-code"
           {...register("code")}
         />
@@ -59,7 +59,7 @@ const CreateUrlForm = ({ onSuccess }) => {
 
       <button
         disabled={isSubmitting}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full py-2.5 sm:py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm sm:text-base"
       >
         {isSubmitting ? "Creating..." : "Create Short URL"}
       </button>

@@ -45,7 +45,7 @@ const EditUrlForm = ({ url, onSuccess }) => {
           Original URL
         </label>
         <input
-          className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="border border-gray-300 rounded-lg p-2.5 sm:p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
           {...register("originalURL")}
         />
       </div>
@@ -55,7 +55,7 @@ const EditUrlForm = ({ url, onSuccess }) => {
           Short Code
         </label>
         <input
-          className="border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="border border-gray-300 rounded-lg p-2.5 sm:p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
           {...register("code")}
         />
         <p className="text-xs text-gray-500 mt-1">Update the short code if needed</p>
@@ -63,7 +63,7 @@ const EditUrlForm = ({ url, onSuccess }) => {
 
       <button
         disabled={isSubmitting}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full py-2.5 sm:py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 text-sm sm:text-base"
       >
         {isSubmitting ? "Updating..." : "Update URL"}
       </button>

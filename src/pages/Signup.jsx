@@ -34,43 +34,43 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-purple-50 px-4 py-8">
       <div className="w-full max-w-md">
         {/* Logo/Brand */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 mb-2">
-            <div className="bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold text-2xl px-4 py-2 rounded">
+            <div className="bg-linear-to-r from-blue-600 to-purple-600 text-white font-bold text-xl sm:text-2xl px-3 sm:px-4 py-1.5 sm:py-2 rounded">
               LS
             </div>
-            <span className="font-bold text-3xl">LinkSnip</span>
+            <span className="font-bold text-2xl sm:text-3xl">LinkSnip</span>
           </div>
-          <p className="text-gray-600 mt-2">Create your account and start shortening URLs</p>
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">Create your account and start shortening URLs</p>
         </div>
 
         {/* Signup Form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-white shadow-lg rounded-lg p-8 space-y-5"
+          className="bg-white shadow-lg rounded-lg p-6 sm:p-8 space-y-4 sm:space-y-5"
         >
-          <h1 className="text-2xl font-bold text-center">Sign Up</h1>
+          <h1 className="text-xl sm:text-2xl font-bold text-center">Sign Up</h1>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
               Name
             </label>
             <input
-              className="border border-gray-300 w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 w-full p-2.5 sm:p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               placeholder="Enter your name"
               {...register("name", { required: true })}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
               Email
             </label>
             <input
-              className="border border-gray-300 w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 w-full p-2.5 sm:p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               placeholder="Enter your email"
               type="email"
               {...register("email", { required: true })}
@@ -78,11 +78,11 @@ const Signup = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
               Password
             </label>
             <input
-              className="border border-gray-300 w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 w-full p-2.5 sm:p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               type="password"
               placeholder="Create a password"
               {...register("password", { required: true })}
@@ -90,7 +90,7 @@ const Signup = () => {
           </div>
 
           <button
-            className={`w-full py-3 text-white rounded-lg font-semibold transition
+            className={`w-full py-2.5 sm:py-3 text-white rounded-lg font-semibold transition text-sm sm:text-base
               ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"}
             `}
             disabled={isSubmitting}
@@ -98,7 +98,7 @@ const Signup = () => {
             {isSubmitting ? "Creating Account..." : "Create Account"}
           </button>
 
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-xs sm:text-sm text-gray-600">
             Already have an account?{" "}
             <Link to="/login" className="text-blue-600 font-semibold hover:underline">
               Login
