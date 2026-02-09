@@ -1,0 +1,16 @@
+{
+  "name": "LinkSnip",
+  "short_name": "LinkSnip",
+  "description": "Fast, reliable URL shortener. Create custom short links and track clicks.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
