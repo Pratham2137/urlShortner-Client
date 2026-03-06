@@ -2,6 +2,11 @@
 
 Frontend for the LinkSnip URL shortener platform, built with React and Vite. This application handles authentication, URL creation, URL management, filtering, pagination, and profile views.
 
+## Repository References
+
+- Server Repository: https://github.com/Pratham2137/urlShortner-Server
+- Client Repository: https://github.com/Pratham2137/urlShortner-Client
+
 ## Highlights
 
 - Authentication flow with protected routes
