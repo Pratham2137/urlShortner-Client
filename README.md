@@ -10,6 +10,10 @@ Frontend for the LinkSnip URL shortener platform, built with React and Vite. Thi
 - Token-based API calls with automatic access-token refresh
 - Responsive UI with Tailwind CSS and toast notifications
 
+## Deployment Link
+
+- Production: https://cutlnk.vercel.app/
+
 ## Tech Stack
 
 - React 19
@@ -19,6 +23,10 @@ Frontend for the LinkSnip URL shortener platform, built with React and Vite. Thi
 - Tailwind CSS 4
 - React Hook Form
 - Zod
+
+## Architecture
+
+- Detailed architecture document: `ARCHITECTURE.md`
 
 ## Project Structure
 
