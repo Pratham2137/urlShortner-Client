@@ -1,16 +1,95 @@
-# React + Vite
+# LinkSnip Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend for the LinkSnip URL shortener platform, built with React and Vite. This application handles authentication, URL creation, URL management, filtering, pagination, and profile views.
 
-Currently, two official plugins are available:
+## Highlights
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Authentication flow with protected routes
+- Dashboard for creating, updating, deleting, and browsing short URLs
+- Search, sorting, status filters, and pagination
+- Token-based API calls with automatic access-token refresh
+- Responsive UI with Tailwind CSS and toast notifications
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite 7
+- React Router 7
+- Axios
+- Tailwind CSS 4
+- React Hook Form
+- Zod
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+	api/           # API clients and axios setup
+	auth/          # Auth context, provider, and route guard
+	components/    # Reusable UI components
+	hooks/         # Custom hooks (auth, debounce)
+	pages/         # Route pages (dashboard, login, signup, profile)
+	utils/         # Utility functions
+```
+
+## Prerequisites
+
+- Node.js 18+
+- npm 9+
+- Running backend server (`urlShortner-Server`)
+
+## Environment Variables
+
+Create a `.env` file in `urlShortner-Client/`.
+
+```bash
+VITE_API_URL=http://localhost:3000
+```
+
+Notes:
+- `VITE_API_URL` should point to the backend base URL (without `/api`).
+- Axios is configured to call `${VITE_API_URL}/api` and send cookies for refresh-token flow.
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+The app runs on Vite default URL: `http://localhost:5173`.
+
+## Available Scripts
+
+- `npm run dev` starts the development server
+- `npm run build` creates a production build
+- `npm run preview` previews the production build locally
+- `npm run lint` runs ESLint
+
+## Authentication Flow
+
+- Access token is stored in `localStorage` as `accessToken`
+- Refresh token is stored as an HTTP-only cookie by the backend
+- On 401 responses (except login/signup/refresh), the client calls `/user/refresh` and retries the original request
+- If refresh fails, user session is cleared and redirected to `/login`
+
+## Backend Dependency
+
+This frontend expects the backend API from `urlShortner-Server` with routes under `/api`, including:
+
+- `POST /api/user/signup`
+- `POST /api/user/login`
+- `POST /api/user/refresh`
+- `POST /api/user/logout`
+- `GET /api/user/profile`
+- URL CRUD routes under `/api/url`
+
+## Deployment
+
+- Build: `npm run build`
+- Deploy the generated `dist/` directory to your static hosting provider
+- Set `VITE_API_URL` in your deployment environment to the production backend URL
+
+## License
+
+This project currently has no explicit license in `package.json`. Add one before public distribution.
